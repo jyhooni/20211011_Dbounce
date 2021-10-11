@@ -22,7 +22,7 @@ public class panel_sc3 : MonoBehaviour
     void Update()
     {
         HStext.text = "BEST:" + PlayerPrefs.GetInt("HighScore");
-        HCtext.text = "" + PlayerPrefs.GetInt("HighCoin");
+        HCtext.text = "$ " + PlayerPrefs.GetInt("HighCoin");
         SCtext.text = "" + PlayerPrefs.GetInt("Score");
     }
 

@@ -104,14 +104,6 @@ public class Ball : MonoBehaviour
 //		}
 
 
-
-
-
-
-
-
-
-
 		if (other.transform.tag == "coin")
 		{
 			Coin++;

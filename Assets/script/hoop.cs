@@ -8,6 +8,8 @@ public class hoop : MonoBehaviour
 
 {
 
+    public int heartcount;
+
     //public GameObject Pannel;
 
     // Start is called before the first frame update
@@ -17,27 +19,41 @@ public class hoop : MonoBehaviour
         float y = Random.Range(-6.0f, -6.1f);
 
         transform.position = new Vector3(x, y, 0);
-    }
+
+        heartcount = 3;
+}
 
     // Update is called once per frame
     void Update()
     {//새로운 위치 = 현재위치 + 방향 * 속도 
         transform.position = transform.position + new Vector3(0, 1, 0) * Time.deltaTime;
+        
+        
+        
+        
 
+    }
 
-
-	}
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collision");
+       // Debug.Log("collision");
 
-        if(collision.transform.tag == "topwall")
-        {
-            Debug.Log("coll222");
+        
 
-            SceneManager.LoadScene("Gameover");
-        }
+       // if(collision.transform.tag == "topwall")
+        //{
+            
+          //  Debug.Log(heartcount);
+           // heartcount = heartcount - 1;
+            //Debug.Log(heartcount);
+         //   PlayerPrefs.SetInt("Heart", heartcount);
+          //  if (PlayerPrefs.GetInt("Heart", 0) == 3)
+           // {
+            //    Debug.Log("heat 3");
+             //   SceneManager.LoadScene("Gameover");
+           // }
+
+       // }
 
     }
 

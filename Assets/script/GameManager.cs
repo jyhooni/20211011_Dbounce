@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
 	public GameObject newHoop;
 	public GameObject block;
 	public GameObject block2;
+	public GameObject block3;
+	public GameObject block4;
+	public GameObject block5;
 
 
 	#region Singleton class: GameManager
@@ -111,15 +114,32 @@ public class GameManager : MonoBehaviour
 		void Update()
 	{
 
-		if (GameObject.Find("Ball").GetComponent<Ball>().ScoreCount > 1)
+		//장애물 생성
+
+		if (GameObject.Find("Ball").GetComponent<Ball>().ScoreCount > 20)
 		{
 			block.SetActive(true);
 
-		}if(GameObject.Find("Ball").GetComponent<Ball>().ScoreCount > 3)
+		}
+		if(GameObject.Find("Ball").GetComponent<Ball>().ScoreCount > 50)
 		{
 			block2.SetActive(true);
 		}
+		if (GameObject.Find("Ball").GetComponent<Ball>().ScoreCount > 80)
+		{
+			block3.SetActive(true);
+		}
 
+		if (GameObject.Find("Ball").GetComponent<Ball>().ScoreCount > 110)
+		{
+			block4.SetActive(true);
+		}
+		if (GameObject.Find("Ball").GetComponent<Ball>().ScoreCount > 150)
+		{
+			block5.SetActive(true);
+		}
+		
+		
 		//random 숫자 생성, coin의 setactive 랜덤으로 출력하려고. 
 		int rand = Random.Range(3, 8);
 		//Debug.Log(rand.ToString());
@@ -199,7 +219,7 @@ public class GameManager : MonoBehaviour
 			//.getchild(0).setactive(true);
 
 		}
-		if (GameObject.Find("Ball").GetComponent<Ball>().Coin > 1 && GameObject.Find("Ball").GetComponent<Ball>().Coin < 3)
+		if (GameObject.Find("Ball").GetComponent<Ball>().ScoreCount > 1 && GameObject.Find("Ball").GetComponent<Ball>().ScoreCount < 30)
 		{
 			//Debug.Log("2");
 			bg2.SetActive(true);
@@ -211,7 +231,7 @@ public class GameManager : MonoBehaviour
 			//newHoop.transform.Find("hoop1").gameObject.SetActive(true);
 			//newHoop.transform.Find("hoop1_1").gameObject.SetActive(false);
 		}
-		if (GameObject.Find("Ball").GetComponent<Ball>().Coin > 3)
+		if (GameObject.Find("Ball").GetComponent<Ball>().ScoreCount > 30)
 		{
 			//Debug.Log("3");
 			bg3.SetActive(true);
